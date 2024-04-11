@@ -6,17 +6,16 @@ public class BuildManager : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private GameObject cursor;
-    [SerializeField] private GameObject wood;
+    [SerializeField] private BuildingTypeScriptableObject buildingType;
     
     
-
     private void Update()
     {
         Cursor.visible = false;
         cursor.transform.position = GetMousePos();
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(wood, GetMousePos(), Quaternion.identity);
+            Instantiate(buildingType.prefab, GetMousePos(), Quaternion.identity);
         }
     }
 
