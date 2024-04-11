@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
   cursor: {fileID: 530349825}
-  buildingType: {fileID: 11400000, guid: 2a3f79c5e7467a84490115e9b1a9b104, type: 2}
 --- !u!4 &493086
 Transform:
   m_ObjectHideFlags: 0

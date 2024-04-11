@@ -6,9 +6,15 @@ public class BuildManager : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private GameObject cursor;
-    [SerializeField] private BuildingTypeScriptableObject buildingType;
-    
-    
+    private BuildingTypeScriptableObject buildingType;
+    private BuildingTypeList buildingTypeList;
+
+    private void Start()
+    {
+        buildingTypeList = Resources.Load<BuildingTypeList>(nameof(BuildingTypeList));
+        buildingType = buildingTypeList.list[0];
+    }
+
     private void Update()
     {
         Cursor.visible = false;
@@ -17,6 +23,16 @@ public class BuildManager : MonoBehaviour
         {
             Instantiate(buildingType.prefab, GetMousePos(), Quaternion.identity);
         }
+        //just testing
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            buildingType = buildingTypeList.list[0];
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            buildingType = buildingTypeList.list[1];
+        }
+        
     }
 
     private Vector3 GetMousePos()
