@@ -9,7 +9,7 @@ public class BuildManager : MonoBehaviour
     private BuildingTypeScriptableObject buildingType;
     private BuildingTypeList buildingTypeList;
 
-    private void Start()
+    private void Awake()
     {
         buildingTypeList = Resources.Load<BuildingTypeList>(nameof(BuildingTypeList));
         buildingType = buildingTypeList.list[0];

@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
-  m_Name: WoodenCollector
+  m_Script: {fileID: 11500000, guid: 7cf0d9e4c2fa65843b031e8834b042b6, type: 3}
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  buildingName: Wooden Collector
-  prefab: {fileID: 207442154302194089, guid: 8aec7f2557dffc0469c6126a3f1db257, type: 3}
+  resourceName: Wood

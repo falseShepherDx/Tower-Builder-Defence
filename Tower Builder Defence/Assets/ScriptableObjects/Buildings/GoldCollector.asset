@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
+  m_Name: GoldCollector
+  m_EditorClassIdentifier: 
+  buildingName: Gold Collector
+  prefab: {fileID: 0}
+  resourceGeneratorData:
+    generateRateTimer: 4
+    resourceType: {fileID: 11400000, guid: 550f3be38eac2c74d8dc3d416c751495, type: 2}

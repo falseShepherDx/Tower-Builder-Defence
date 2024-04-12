@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Stone Collector
   prefab: {fileID: 8114719195682516889, guid: b4ddfa97845b9374abc5054bbde22618, type: 3}
+  resourceGeneratorData:
+    generateRateTimer: 2
+    resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
