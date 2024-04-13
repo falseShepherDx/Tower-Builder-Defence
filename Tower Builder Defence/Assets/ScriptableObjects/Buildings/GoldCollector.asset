@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GoldCollector
   m_EditorClassIdentifier: 
   buildingName: Gold Collector
-  prefab: {fileID: 0}
+  prefab: {fileID: 4301133565608913135, guid: 8e7df935e83131d4a968442208136784, type: 3}
   resourceGeneratorData:
     generateRateTimer: 4
     resourceType: {fileID: 11400000, guid: 550f3be38eac2c74d8dc3d416c751495, type: 2}

@@ -32,6 +32,11 @@ public class BuildManager : MonoBehaviour
         {
             buildingType = buildingTypeList.list[1];
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            buildingType = buildingTypeList.list[2];
+        }
         
     }
 

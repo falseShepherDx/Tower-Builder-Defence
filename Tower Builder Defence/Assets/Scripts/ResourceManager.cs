@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager Instance { get; private set; }//it can read from anywhere but it can only be changed within this class.
     private Dictionary<ResourceTypeScriptableObject, int> resourceAmountDictionary;
+    public event EventHandler OnResourceAmountChanged;
     private void Awake()
     {
         Instance = this;//singleton
@@ -44,11 +46,17 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceTypeScriptableObject resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
+        OnResourceAmountChanged?.Invoke(this,EventArgs.Empty);
         Test();
     }
 
     public void DecreaseResource(ResourceTypeScriptableObject resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] -= amount;
+    }
+
+    public int GetResourceAmount(ResourceTypeScriptableObject resourceType)
+    {
+        return resourceAmountDictionary[resourceType];
     }
 }
