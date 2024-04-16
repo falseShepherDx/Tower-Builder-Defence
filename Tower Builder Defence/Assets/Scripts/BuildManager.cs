@@ -1,42 +1,35 @@
 using System;
 using Unity.Mathematics;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class BuildManager : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private GameObject cursor;
-    private BuildingTypeScriptableObject buildingType;
+    private BuildingTypeScriptableObject activeBuildingType;
     private BuildingTypeList buildingTypeList;
+    public EventHandler OnBuildSelected;
+    public static BuildManager Instance { get; private set; }
 
     private void Awake()
     {
+        Instance = this;
         buildingTypeList = Resources.Load<BuildingTypeList>(nameof(BuildingTypeList));
-        buildingType = buildingTypeList.list[0];
+        //activeBuildingType = buildingTypeList.list[0];
     }
 
     private void Update()
     {
         Cursor.visible = false;
         cursor.transform.position = GetMousePos();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) &&!EventSystem.current.IsPointerOverGameObject())
         {
-            Instantiate(buildingType.prefab, GetMousePos(), Quaternion.identity);
+            Instantiate(activeBuildingType.prefab, GetMousePos(), Quaternion.identity);
         }
-        //just testing
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            buildingType = buildingTypeList.list[0];
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            buildingType = buildingTypeList.list[1];
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            buildingType = buildingTypeList.list[2];
-        }
+        
         
     }
 
@@ -46,4 +39,16 @@ public class BuildManager : MonoBehaviour
         mousePos.z = 0f;
         return mousePos;
     }
+
+    public void SetActiveBuildingType(BuildingTypeScriptableObject buildingType)
+    {
+        activeBuildingType = buildingType;
+        OnBuildSelected?.Invoke(buildingType,EventArgs.Empty);
+        
+    }
+    public BuildingTypeScriptableObject GetBuildingTypeByIndex(int index)
+    {
+        return buildingTypeList.list[index];
+    }
+
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,4 +6,11 @@ using UnityEngine;
 public class BuildingTypeList : ScriptableObject
 {
     public List<BuildingTypeScriptableObject> list;
+    
+    public static BuildingTypeList Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 }
