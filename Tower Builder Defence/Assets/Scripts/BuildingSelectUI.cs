@@ -8,25 +8,40 @@ public class BuildingSelectUI : MonoBehaviour
 {
     [SerializeField] private List<Button> buildingButtons;
     [SerializeField] private List<Image> selectedOutlines;
-    
+    [SerializeField] private Button cursorSelectButton;
+    [SerializeField] private GameObject cursor;
     private BuildManager _buildManager;
 
     private void Start()
     {
         _buildManager = BuildManager.Instance;
-        _buildManager.OnBuildSelected += BuildManager_OnBuildSelected;
         for (int i = 0; i < buildingButtons.Count; i++)
         {
             int index = i;
             buildingButtons[i].onClick.AddListener(() => SelectBuilding(index));
             
         }
+        cursorSelectButton.onClick.AddListener(() =>ActivateCursor());
     }
-    private void SelectBuilding(int index)
+
+    private void ActivateCursor()
     {
+        cursor.SetActive(true);
         for (int i = 0; i < selectedOutlines.Count; i++)
         {
             selectedOutlines[i].gameObject.SetActive(false);
+        }
+        selectedOutlines[3].gameObject.SetActive(true);
+        _buildManager.SetActiveBuildingType(null);
+    }
+
+    private void SelectBuilding(int index)
+    {
+        cursor.SetActive(false);
+        for (int i = 0; i < selectedOutlines.Count; i++)
+        {
+            selectedOutlines[i].gameObject.SetActive(false);
+            
         }
         selectedOutlines[index].gameObject.SetActive(true);
         
@@ -35,9 +50,5 @@ public class BuildingSelectUI : MonoBehaviour
     }
 
 
-    private void BuildManager_OnBuildSelected(object sender, EventArgs e)
-    {
-        
-        //buraya bir şeyler eklerim 
-    }
+ 
 }

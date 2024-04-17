@@ -11,7 +11,13 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private GameObject cursor;
     private BuildingTypeScriptableObject activeBuildingType;
     private BuildingTypeList buildingTypeList;
-    public EventHandler OnBuildSelected;
+    public EventHandler<OnActiveBuildingTypeChangedEventArgs>  OnActiveBuildingTypeChanged;
+    
+    public class OnActiveBuildingTypeChangedEventArgs: EventArgs
+    {
+        
+        public BuildingTypeScriptableObject activeBuildingType;
+    }
     public static BuildManager Instance { get; private set; }
 
     private void Awake()
@@ -24,26 +30,23 @@ public class BuildManager : MonoBehaviour
     private void Update()
     {
         Cursor.visible = false;
-        cursor.transform.position = GetMousePos();
+        cursor.transform.position = MouseCursorPos.GetMousePos();
         if (Input.GetMouseButtonDown(0) &&!EventSystem.current.IsPointerOverGameObject())
         {
-            Instantiate(activeBuildingType.prefab, GetMousePos(), Quaternion.identity);
+            if(activeBuildingType==null)return;
+            Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), Quaternion.identity);
         }
-        
-        
     }
 
-    private Vector3 GetMousePos()
-    {
-        Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
-        return mousePos;
-    }
+  
 
     public void SetActiveBuildingType(BuildingTypeScriptableObject buildingType)
     {
         activeBuildingType = buildingType;
-        OnBuildSelected?.Invoke(buildingType,EventArgs.Empty);
+        OnActiveBuildingTypeChanged?.Invoke(this,new OnActiveBuildingTypeChangedEventArgs()
+        {
+            activeBuildingType = activeBuildingType
+        });
         
     }
     public BuildingTypeScriptableObject GetBuildingTypeByIndex(int index)
