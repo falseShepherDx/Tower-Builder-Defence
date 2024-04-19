@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
-  m_Name: WoodenCollector
+  m_Name: TownHall
   m_EditorClassIdentifier: 
-  buildingName: Wooden Collector
-  prefab: {fileID: 207442154302194089, guid: 8aec7f2557dffc0469c6126a3f1db257, type: 3}
+  buildingName: 
+  prefab: {fileID: 2170034969919225441, guid: 493d567513b6a8445bf81403739e632a, type: 3}
   resourceGeneratorData:
     generateRateTimer: 1
     resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
     resourceDetectionRadius: 7
     maxResourceSource: 7
-  buildingSprite: {fileID: 21300000, guid: 17777e6a639faa34d86a7cad5346a004, type: 3}
-  minConstructionRadius: 7
+  buildingSprite: {fileID: 0}
+  minConstructionRadius: 0

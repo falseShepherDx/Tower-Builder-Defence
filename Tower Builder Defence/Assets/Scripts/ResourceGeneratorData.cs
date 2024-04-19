@@ -6,4 +6,7 @@ public class ResourceGeneratorData
 {
     public float generateRateTimer;
     public ResourceTypeScriptableObject resourceType;
+    public float resourceDetectionRadius;
+    public int maxResourceSource;
+    
 }

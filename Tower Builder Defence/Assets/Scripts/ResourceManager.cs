@@ -24,7 +24,7 @@ public class ResourceManager : MonoBehaviour
         {
             ResourcesTypeList resourcesTypeList = Resources.Load<ResourcesTypeList>(nameof(ResourcesTypeList));
             AddResource(resourcesTypeList.resourceList[2], 2);//0 wood 1 stone 2 gold
-            Test();
+            
             
         }
 
@@ -32,22 +32,16 @@ public class ResourceManager : MonoBehaviour
         {
             ResourcesTypeList resourcesTypeList = Resources.Load<ResourcesTypeList>(nameof(ResourcesTypeList));
             DecreaseResource(resourcesTypeList.resourceList[2],1);
-            Test();
+            
         }
     }
-    private void Test()
-    {
-        foreach (ResourceTypeScriptableObject resourceType in resourceAmountDictionary.Keys)
-        {
-            Debug.Log(resourceType.resourceName + ": " + resourceAmountDictionary[resourceType]);
-        }
-    }
+   
 
     public void AddResource(ResourceTypeScriptableObject resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
         OnResourceAmountChanged?.Invoke(this,EventArgs.Empty);
-        Test();
+        
     }
 
     public void DecreaseResource(ResourceTypeScriptableObject resourceType, int amount)

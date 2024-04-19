@@ -17,4 +17,7 @@ MonoBehaviour:
   resourceGeneratorData:
     generateRateTimer: 2
     resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
+    resourceDetectionRadius: 5
+    maxResourceSource: 4
   buildingSprite: {fileID: 21300000, guid: 0924141d2323cd5478a172d6da98187c, type: 3}
+  minConstructionRadius: 7
