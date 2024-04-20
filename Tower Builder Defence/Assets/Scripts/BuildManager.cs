@@ -31,10 +31,14 @@ public class BuildManager : MonoBehaviour
     {
         Cursor.visible = false;
         cursor.transform.position = MouseCursorPos.GetMousePos();
-        if (Input.GetMouseButtonDown(0) &&!EventSystem.current.IsPointerOverGameObject() &&CanSpawnBuilding(activeBuildingType,MouseCursorPos.GetMousePos()))
+        if (Input.GetMouseButtonDown(0) &&!EventSystem.current.IsPointerOverGameObject() &&CanSpawnBuilding(activeBuildingType,MouseCursorPos.GetMousePos()) &&activeBuildingType!=null)
         {
-            if(activeBuildingType==null)return;
-            Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), Quaternion.identity);
+            if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionCostArray))
+            {
+                ResourceManager.Instance.DecreaseResource(activeBuildingType.constructionCostArray);
+                Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), Quaternion.identity);
+            }
+            
         }
     }
 
