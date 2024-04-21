@@ -13,23 +13,28 @@ public class ResourceGenerator : MonoBehaviour
         generateRate = _resourceGeneratorData.generateRateTimer;
     }
 
-    private void Start()
+    public static int GetNearbyResourceAmount(ResourceGeneratorData resourceGeneratorData, Vector3 position)
     {
-        Collider2D[] collider2DList = Physics2D.OverlapCircleAll(transform.position, _resourceGeneratorData.resourceDetectionRadius);
+        Collider2D[] collider2DList = Physics2D.OverlapCircleAll(position, resourceGeneratorData.resourceDetectionRadius);
         int nearbyResourceAmount = 0;
         foreach (Collider2D collider2D in collider2DList)
         {
             ResourceSource resourceSource = collider2D.GetComponent<ResourceSource>();
             if (resourceSource != null)
             {
-                if (resourceSource.resourceType == _resourceGeneratorData.resourceType)
+                if (resourceSource.resourceType == resourceGeneratorData.resourceType)
                 {
                     nearbyResourceAmount++;
                 }
             }
         }
 
-        nearbyResourceAmount = Mathf.Clamp(nearbyResourceAmount, 0, _resourceGeneratorData.maxResourceSource);
+        nearbyResourceAmount = Mathf.Clamp(nearbyResourceAmount, 0, resourceGeneratorData.maxResourceSource);
+        return nearbyResourceAmount;
+    }
+    private void Start()
+    {
+        int nearbyResourceAmount = GetNearbyResourceAmount(_resourceGeneratorData,transform.position);
         if (nearbyResourceAmount == 0)
         {
             this.enabled = false;
@@ -51,6 +56,21 @@ public class ResourceGenerator : MonoBehaviour
 
         Debug.Log("Nearby Resource Amount : " + nearbyResourceAmount + "timerMax:" + generateRate);
 
+    }
+
+    public ResourceGeneratorData GetResourceGeneratorData()
+    {
+        return _resourceGeneratorData;
+    }
+
+    public float GetTimer()
+    {
+        return timer / generateRate;
+    }
+
+    public float ResourcePerSecond()
+    {
+        return 1 / generateRate;
     }
 
     void Update()

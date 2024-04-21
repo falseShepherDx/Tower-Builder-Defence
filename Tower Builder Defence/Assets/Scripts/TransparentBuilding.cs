@@ -8,9 +8,11 @@ public class TransparentBuilding : MonoBehaviour
 {
     private GameObject sprite;
     private BuildManager _buildManager;
+    private NearbyResourceEffiiencyUI _resourceEffiiencyUI;
     private void Awake()
     {
         sprite = transform.Find("sprite").gameObject;
+        _resourceEffiiencyUI = transform.Find("NearbyResourceEfficiency").GetComponent<NearbyResourceEffiiencyUI>();
         Hide();
     }
 
@@ -22,10 +24,16 @@ public class TransparentBuilding : MonoBehaviour
 
     private void TransparentBuilding_OnActiveTypeChanged(object sender, BuildManager.OnActiveBuildingTypeChangedEventArgs eventArgs)
     {
-        if(eventArgs.activeBuildingType==null) Hide();
+        if (eventArgs.activeBuildingType == null)
+        {
+            Hide();
+            _resourceEffiiencyUI.Hide();
+        }
+        
         else
         {
             Show(eventArgs.activeBuildingType.buildingSprite);
+            _resourceEffiiencyUI.Show(eventArgs.activeBuildingType.resourceGeneratorData);
         }
     }
 

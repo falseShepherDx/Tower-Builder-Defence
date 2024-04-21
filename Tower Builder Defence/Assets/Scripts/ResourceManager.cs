@@ -45,7 +45,7 @@ public class ResourceManager : MonoBehaviour
         {
             if (GetResourceAmount(resourceAmount.resourceType) >= resourceAmount.resourceAmount)
             {
-                return true;
+                
             }
             else
             {
