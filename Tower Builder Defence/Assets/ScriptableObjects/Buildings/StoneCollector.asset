@@ -19,7 +19,7 @@ MonoBehaviour:
     resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
     resourceDetectionRadius: 5
     maxResourceSource: 4
-  buildingSprite: {fileID: 21300000, guid: c9c41263008cb7a44a2eb555bd336e91, type: 3}
+  buildingSprite: {fileID: 21300000, guid: 645343bab0b7f534eaa63ed670214961, type: 3}
   minConstructionRadius: 7
   constructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   resourceName: Stone
-  resourceSprite: {fileID: 21300000, guid: fc47248586bac21438febe3aac545ed0, type: 3}
+  resourceSprite: {fileID: 21300000, guid: b182089295ef6b744827729655e90641, type: 3}
