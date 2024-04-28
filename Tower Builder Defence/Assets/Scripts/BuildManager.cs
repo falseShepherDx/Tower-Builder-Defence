@@ -1,5 +1,6 @@
 using System;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
@@ -31,15 +32,29 @@ public class BuildManager : MonoBehaviour
     {
         Cursor.visible = false;
         cursor.transform.position = MouseCursorPos.GetMousePos();
-        if (Input.GetMouseButtonDown(0) &&!EventSystem.current.IsPointerOverGameObject() &&CanSpawnBuilding(activeBuildingType,MouseCursorPos.GetMousePos()) &&activeBuildingType!=null)
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionCostArray))
+            if (activeBuildingType != null)
             {
-                ResourceManager.Instance.DecreaseResource(activeBuildingType.constructionCostArray);
-                Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), Quaternion.identity);
+                if (CanSpawnBuilding(activeBuildingType, MouseCursorPos.GetMousePos(), out string tipMessage))
+                {
+                    if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionCostArray))
+                    {
+                        ResourceManager.Instance.DecreaseResource(activeBuildingType.constructionCostArray);
+                        Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), quaternion.identity);
+                    }
+                    else
+                    {
+                        PlayerTipUI.Instance.Show("Cant afford. "+ activeBuildingType.GetCollectorCostString(),new PlayerTipUI.TipMessageTimer {timer = 2f});
+                    }
+                }
+                else
+                {
+                    PlayerTipUI.Instance.Show(tipMessage,new PlayerTipUI.TipMessageTimer {timer = 2f});
+                }
             }
-            
         }
+        
     }
 
   
@@ -58,13 +73,14 @@ public class BuildManager : MonoBehaviour
         return buildingTypeList.list[index];
     }
 
-    private bool CanSpawnBuilding(BuildingTypeScriptableObject buildingType, Vector3 position)
+    private bool CanSpawnBuilding(BuildingTypeScriptableObject buildingType, Vector3 position,out string tipMessage)
     {
         BoxCollider2D boxCollider2D = buildingType.prefab.GetComponent<BoxCollider2D>();
         Collider2D[] collider2Ds=Physics2D.OverlapBoxAll(position+(Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
         bool isAreaClear = collider2Ds.Length == 0;
         if (!isAreaClear)
         {
+            tipMessage = "Area is not clear";
             return false;
         }
         //check the radius for same type of buildings
@@ -77,6 +93,7 @@ public class BuildManager : MonoBehaviour
                 if (buildingTypeHolder.buildingType == buildingType)
                 {
                     //there is a same type of collector in radius
+                    tipMessage = "Too close to another building of the same type!";
                     return false;
                     
                 }
@@ -89,10 +106,13 @@ public class BuildManager : MonoBehaviour
         {
             BuildingTypeClass buildingTypeHolder = collider2D.GetComponent<BuildingTypeClass>();
             if (buildingTypeHolder != null)
-            {  
+            {
+                tipMessage = "";
                     return true;
             }
         }
+
+        tipMessage = "Too far from any other building";
         return false;
     }
 

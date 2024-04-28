@@ -20,7 +20,7 @@ MonoBehaviour:
     resourceDetectionRadius: 6
     maxResourceSource: 4
   buildingSprite: {fileID: 21300000, guid: 645343bab0b7f534eaa63ed670214961, type: 3}
-  minConstructionRadius: 7
+  minConstructionRadius: 6
   constructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
     resourceAmount: 30

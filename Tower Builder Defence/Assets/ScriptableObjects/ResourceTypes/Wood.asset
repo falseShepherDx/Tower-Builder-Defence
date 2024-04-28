@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: Wood
   resourceSprite: {fileID: 21300000, guid: 4500dde9028b26f4ea4081779fb8ad45, type: 3}
+  HexColorCode: C06C1C
+  ResourceShortName: W

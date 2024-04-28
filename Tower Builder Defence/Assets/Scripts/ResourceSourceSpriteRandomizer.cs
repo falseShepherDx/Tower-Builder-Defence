@@ -12,9 +12,14 @@ public class ResourceSourceSpriteRandomizer : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.sprite = resourceSourceSprites[Random.Range(0, resourceSourceSprites.Count)];
-
-
+        if (resourceSourceSprites.Count > 0)
+        {
+            _spriteRenderer.sprite = resourceSourceSprites[Random.Range(0, resourceSourceSprites.Count)];
+        }
+        else
+        {
+            Debug.Log("list is empty");
+        }
     }
 
     
