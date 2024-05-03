@@ -13,5 +13,10 @@ public static class MouseCursorPos
         mousePos.z = 0f;
         return mousePos;
     }
+
+    public static Vector3 RandomizeSpawnDirection()
+    {
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    }
    
 }

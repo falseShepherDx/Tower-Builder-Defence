@@ -12,6 +12,8 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private GameObject cursor;
     private BuildingTypeScriptableObject activeBuildingType;
     private BuildingTypeList buildingTypeList;
+    [SerializeField] private Building hqBuilding;
+    
     public EventHandler<OnActiveBuildingTypeChangedEventArgs>  OnActiveBuildingTypeChanged;
     
     public class OnActiveBuildingTypeChangedEventArgs: EventArgs
@@ -54,7 +56,13 @@ public class BuildManager : MonoBehaviour
                 }
             }
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Vector3 enemyPosition = MouseCursorPos.GetMousePos() + MouseCursorPos.RandomizeSpawnDirection() * 5f;
+            Enemy.Create(enemyPosition);
+
+        }
     }
 
   
@@ -114,6 +122,11 @@ public class BuildManager : MonoBehaviour
 
         tipMessage = "Too far from any other building";
         return false;
+    }
+
+    public Building GetHqBuilding()
+    {
+        return hqBuilding;
     }
 
 }
