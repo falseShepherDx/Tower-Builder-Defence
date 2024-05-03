@@ -26,3 +26,4 @@ MonoBehaviour:
     resourceAmount: 50
   - resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
     resourceAmount: 50
+  buildingHealthMax: 100

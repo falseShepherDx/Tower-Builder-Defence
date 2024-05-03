@@ -353,10 +353,17 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1773387827
       objectReference: {fileID: 0}
+    - target: {fileID: 8861020646398499456, guid: 493d567513b6a8445bf81403739e632a, type: 3}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7313446497399070506, guid: 493d567513b6a8445bf81403739e632a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 493d567513b6a8445bf81403739e632a, type: 3}
 --- !u!1001 &135674801
 PrefabInstance:
@@ -969,6 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399506309}
   - component: {fileID: 399506308}
+  - component: {fileID: 399506310}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -998,7 +1006,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1863164233}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 17.99999
+    OrthographicSize: 15.99999
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1031,6 +1039,23 @@ Transform:
   - {fileID: 84626609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399506310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399506307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 0
+  m_BoundingVolume: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1999926191}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
 --- !u!4 &425276742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6385284622416163147, guid: 1ff40b46398cb8746bd76914bec7d4a8, type: 3}
@@ -1218,7 +1243,7 @@ Camera:
   far clip plane: 5000
   field of view: 60
   orthographic: 1
-  orthographic size: 17.99999
+  orthographic size: 15.99999
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3754,7 +3779,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 250, y: 150}
+  m_Size: {x: 250, y: 125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4281,6 +4306,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6993638260652321377, guid: 1034a33f524b94a4593ea101fb94ee23, type: 3}
   m_PrefabInstance: {fileID: 482530071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1999926188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999926190}
+  - component: {fileID: 1999926191}
+  m_Layer: 2
+  m_Name: Camerabounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1999926190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999926188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1999926191
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999926188}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 458.85428, y: 206.72394}
+      - {x: -453.40985, y: 206.19855}
+      - {x: -452.5729, y: 128.41568}
+      - {x: -452.81396, y: -220.31155}
+      - {x: 467.50873, y: -204.82841}
+      - {x: 462.4431, y: 46.82023}
+  m_UseDelaunayMesh: 0
 --- !u!4 &2004438427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6385284622416163147, guid: 1ff40b46398cb8746bd76914bec7d4a8, type: 3}
@@ -4620,6 +4728,12 @@ PrefabInstance:
     - target: {fileID: 2248212716737753699, guid: ea6444559e33ca54f9bcd3d532466aa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635301405818304686, guid: ea6444559e33ca54f9bcd3d532466aa4, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5066,11 +5180,15 @@ PrefabInstance:
       objectReference: {fileID: 399506308}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: maxScrollLimit
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: minScrollLimit
-      value: 12
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
+      propertyPath: cameraMoveSpeed
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5160,3 +5278,4 @@ SceneRoots:
   - {fileID: 244427788}
   - {fileID: 128731498}
   - {fileID: 1434924036}
+  - {fileID: 1999926190}

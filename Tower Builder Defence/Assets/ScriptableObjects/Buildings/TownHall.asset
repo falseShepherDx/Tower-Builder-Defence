@@ -21,3 +21,5 @@ MonoBehaviour:
     maxResourceSource: 7
   buildingSprite: {fileID: 0}
   minConstructionRadius: 0
+  constructionCostArray: []
+  buildingHealthMax: 150

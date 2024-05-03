@@ -53,8 +53,7 @@ public class ResourceGenerator : MonoBehaviour
             }
             generateRate = _resourceGeneratorData.generateRateTimer / speedupFactor;
         }
-
-        Debug.Log("Nearby Resource Amount : " + nearbyResourceAmount + "timerMax:" + generateRate);
+        
 
     }
 
