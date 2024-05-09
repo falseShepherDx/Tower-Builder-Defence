@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
   m_Name: TownHall
   m_EditorClassIdentifier: 
-  buildingName: 
+  buildingName: Town Hall
   prefab: {fileID: 2170034969919225441, guid: 493d567513b6a8445bf81403739e632a, type: 3}
   resourceGeneratorData:
     generateRateTimer: 1
