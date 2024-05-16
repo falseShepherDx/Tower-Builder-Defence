@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
-  m_Name: WoodenCollector
+  m_Name: Tower
   m_EditorClassIdentifier: 
-  buildingName: Wooden Collector
-  prefab: {fileID: 207442154302194089, guid: 8aec7f2557dffc0469c6126a3f1db257, type: 3}
+  buildingName: Tower
+  prefab: {fileID: 2170034969919225441, guid: 19420465ccdb90644bf8b9eba12dbb8b, type: 3}
   resourceGeneratorData:
-    generateRateTimer: 1
-    resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceDetectionRadius: 8
-    maxResourceSource: 7
-  hasResourceGenerator: 1
-  buildingSprite: {fileID: 21300000, guid: 4122b9607a7add74087f8c90533ac919, type: 3}
-  minConstructionRadius: 10
+    generateRateTimer: 0
+    resourceType: {fileID: 0}
+    resourceDetectionRadius: 0
+    maxResourceSource: 0
+  buildingSprite: {fileID: 21300000, guid: 43c1d1dac96e66d4caf1469e5239aaf1, type: 3}
+  minConstructionRadius: 7
   constructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceAmount: 10
-  buildingHealthMax: 100
+    resourceAmount: 40
+  - resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
+    resourceAmount: 30
+  buildingHealthMax: 70

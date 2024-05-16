@@ -7,6 +7,7 @@ public class BuildingTypeScriptableObject : ScriptableObject
     public string buildingName;
     public Transform prefab;
     public ResourceGeneratorData resourceGeneratorData;
+    public bool hasResourceGenerator;
     public Sprite buildingSprite;
     public float minConstructionRadius;
     public ResourceAmount[] constructionCostArray;

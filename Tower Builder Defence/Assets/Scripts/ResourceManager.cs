@@ -6,6 +6,8 @@ public class ResourceManager : MonoBehaviour
     public static ResourceManager Instance { get; private set; }//it can read from anywhere but it can only be changed within this class.
     private Dictionary<ResourceTypeScriptableObject, int> resourceAmountDictionary;
     public event EventHandler OnResourceAmountChanged;
+    [SerializeField] private List<ResourceAmount> startingResourceAmount;
+    
     private void Awake()
     {
         Instance = this;//singleton
@@ -15,6 +17,11 @@ public class ResourceManager : MonoBehaviour
         foreach (ResourceTypeScriptableObject resourceType in resourcesTypeList.resourceList)
         {
             resourceAmountDictionary[resourceType] = 0;//baslangıcta 0 resource
+        }
+
+        foreach (ResourceAmount resourceAmounts in startingResourceAmount)
+        {
+            AddResource(resourceAmounts.resourceType,resourceAmounts.resourceAmount);//for testing
         }
     }
    

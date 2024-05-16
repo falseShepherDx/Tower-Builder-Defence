@@ -33,7 +33,14 @@ public class TransparentBuilding : MonoBehaviour
         else
         {
             Show(eventArgs.activeBuildingType.buildingSprite);
-            _resourceEffiiencyUI.Show(eventArgs.activeBuildingType.resourceGeneratorData);
+            if (eventArgs.activeBuildingType.hasResourceGenerator)
+            {
+                _resourceEffiiencyUI.Show(eventArgs.activeBuildingType.resourceGeneratorData);
+            }
+            else
+            {
+                _resourceEffiiencyUI.Hide();
+            }
         }
     }
 

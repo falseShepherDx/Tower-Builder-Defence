@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float targetChaseRadius;
     private float targetChaseTimer, 
         targetChaseTimerMax=0.2f;
+
+    private HealthSystem _healthSystem;
     
     
     void Start()
@@ -23,9 +25,17 @@ public class Enemy : MonoBehaviour
         target=BuildManager.Instance.GetHqBuilding().transform;
         rb = GetComponent<Rigidbody2D>();
         targetChaseTimer = Random.Range(0f, targetChaseTimerMax);
+        _healthSystem=GetComponent<HealthSystem>();
+        _healthSystem.OnDied += HealthSystem_OnDied;
     }
 
-    
+    private void HealthSystem_OnDied(object sender, EventArgs e)
+    {
+        //add some visuals here.
+        Destroy(gameObject);
+    }
+
+
     void Update()
     {
         HandleMovement();
