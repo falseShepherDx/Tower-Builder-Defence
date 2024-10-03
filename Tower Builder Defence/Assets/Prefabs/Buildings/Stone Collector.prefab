@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9187701657405482407}
   - component: {fileID: -4722377024459013987}
   - component: {fileID: -8988033699761555450}
+  - component: {fileID: 1858426341540822430}
   m_Layer: 0
   m_Name: Stone Collector
   m_TagString: Untagged
@@ -200,6 +201,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ff11353efa55746b8d5d85d653030b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1858426341540822430
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163454047811976528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04b7503c5e3308749b7c7081ae940d26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8846022479647773602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +418,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8432090355636815913, guid: 4097f6342ec025441a265c61b644ab4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095025167415062710, guid: 4097f6342ec025441a265c61b644ab4e, type: 3}
+      propertyPath: m_text
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

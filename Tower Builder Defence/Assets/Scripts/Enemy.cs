@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 {
     private Transform target;
     private Rigidbody2D rb;
+    private Vector3 currentVelocity;
     [SerializeField] private float enemyMoveSpeed;
     [SerializeField] private int enemyDamage;
     [SerializeField] private float targetChaseRadius;
@@ -68,7 +69,9 @@ public class Enemy : MonoBehaviour
         if (target != null)
         {
             Vector3 moveDirection = (target.position - transform.position).normalized;
-            rb.velocity = moveDirection *enemyMoveSpeed;
+            //rb.velocity = moveDirection *enemyMoveSpeed;
+            Vector3 targetVelocity = moveDirection * enemyMoveSpeed;
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity, 0.3f);
         }
         else
         {

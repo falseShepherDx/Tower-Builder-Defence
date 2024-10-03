@@ -61,7 +61,6 @@ public class BuildManager : MonoBehaviour
         {
             Vector3 enemyPosition = MouseCursorPos.GetMousePos() + MouseCursorPos.RandomizeSpawnDirection() * 5f;
             Enemy.Create(enemyPosition);
-
         }
     }
 

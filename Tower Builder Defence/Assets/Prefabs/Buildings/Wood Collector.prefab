@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2690432310284573686}
   - component: {fileID: -5463879551463572991}
   - component: {fileID: 2976742551171546033}
+  - component: {fileID: 2453827038723360012}
   m_Layer: 0
   m_Name: Wood Collector
   m_TagString: Untagged
@@ -200,6 +201,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ff11353efa55746b8d5d85d653030b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2453827038723360012
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321858486297208952}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7980b0cf1f9981549b65e552a04c96a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4442899220305895262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +398,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8432090355636815913, guid: 4097f6342ec025441a265c61b644ab4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095025167415062710, guid: 4097f6342ec025441a265c61b644ab4e, type: 3}
+      propertyPath: m_text
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

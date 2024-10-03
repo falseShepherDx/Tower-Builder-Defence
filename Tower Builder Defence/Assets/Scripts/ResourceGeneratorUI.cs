@@ -9,6 +9,8 @@ public class ResourceGeneratorUI : MonoBehaviour
      [SerializeField] private ResourceGenerator _resourceGenerator;
      private Transform bar,text;
      private TextMeshPro _textMeshPro;
+     
+     
 
      private void Start()
      {
