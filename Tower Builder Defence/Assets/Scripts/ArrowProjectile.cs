@@ -27,9 +27,10 @@ public class ArrowProjectile : MonoBehaviour
     {
         Vector3 moveDir;
         if (targetEnemy != null)
-        {
+        { 
             moveDir=(targetEnemy.transform.position - transform.position).normalized;
             lastMoveDir = moveDir;
+           
         }
         else
         {
