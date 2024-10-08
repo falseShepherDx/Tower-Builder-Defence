@@ -10,7 +10,7 @@ public class ResourceGenerator : MonoBehaviour
 
     private void Awake()
     {
-        _resourceGeneratorData=GetComponent<BuildingTypeClass>().buildingType.resourceGeneratorData;
+        _resourceGeneratorData=GetComponent<BuildingTypeClass>().buildingType.ResourceGeneratorData;
         generateRate = _resourceGeneratorData.generateRateTimer;
         _animator = GetComponent<Animator>();
     }

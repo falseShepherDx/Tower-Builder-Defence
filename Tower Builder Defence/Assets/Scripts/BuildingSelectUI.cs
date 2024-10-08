@@ -50,7 +50,7 @@ public class BuildingSelectUI : MonoBehaviour
         BuildingTypeScriptableObject selectedBuilding = _buildManager.GetBuildingTypeByIndex(index);
         _buildManager.SetActiveBuildingType(selectedBuilding);
         MouseEnterExit mouseEnterExit = buildingButtons[index].GetComponent<MouseEnterExit>();
-        mouseEnterExit.OnMouseEnter += ((sender, args) => PlayerTipUI.Instance.Show(selectedBuilding.buildingName+"\n" + selectedBuilding.GetCollectorCostString()));
+        mouseEnterExit.OnMouseEnter += ((sender, args) => PlayerTipUI.Instance.Show(selectedBuilding.BuildingName+"\n" + selectedBuilding.GetCollectorCostString()));
         mouseEnterExit.OnMouseExit += ((sender, args) => PlayerTipUI.Instance.Hide());
         
     }

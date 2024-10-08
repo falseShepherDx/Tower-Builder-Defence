@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
   m_Name: WoodenCollector
   m_EditorClassIdentifier: 
-  buildingName: Wooden Collector
-  prefab: {fileID: 207442154302194089, guid: 8aec7f2557dffc0469c6126a3f1db257, type: 3}
-  resourceGeneratorData:
-    generateRateTimer: 1
+  BuildingName: Wooden Collector
+  Prefab: {fileID: 207442154302194089, guid: 8aec7f2557dffc0469c6126a3f1db257, type: 3}
+  ResourceGeneratorData:
+    generateRateTimer: 2
     resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceDetectionRadius: 8
-    maxResourceSource: 7
-  hasResourceGenerator: 1
-  buildingSprite: {fileID: 21300000, guid: 4122b9607a7add74087f8c90533ac919, type: 3}
-  minConstructionRadius: 10
-  constructionCostArray:
+    resourceDetectionRadius: 7
+    maxResourceSource: 5
+  HasResourceGenerator: 1
+  BuildingSprite: {fileID: 21300000, guid: 4122b9607a7add74087f8c90533ac919, type: 3}
+  MinConstructionRadius: 6
+  ConstructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceAmount: 10
-  buildingHealthMax: 100
+    resourceAmount: 12
+  BuildingHealthMax: 30
+  ConstructionTimerMax: 2.5

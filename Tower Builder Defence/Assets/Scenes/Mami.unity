@@ -5841,7 +5841,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1863164233}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 24.99998
+    OrthographicSize: 24.99999
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -7267,7 +7267,7 @@ Camera:
   far clip plane: 5000
   field of view: 60
   orthographic: 1
-  orthographic size: 24.99998
+  orthographic size: 24.99999
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -28320,7 +28320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: zoomSpeed
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: virtualCamera
@@ -28332,7 +28332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: minScrollLimit
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: cameraMoveSpeed

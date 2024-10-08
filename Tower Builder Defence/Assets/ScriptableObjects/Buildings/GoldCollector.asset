@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
   m_Name: GoldCollector
   m_EditorClassIdentifier: 
-  buildingName: Gold Collector
-  prefab: {fileID: 4301133565608913135, guid: 8e7df935e83131d4a968442208136784, type: 3}
-  resourceGeneratorData:
-    generateRateTimer: 4
+  BuildingName: Gold Collector
+  Prefab: {fileID: 4301133565608913135, guid: 8e7df935e83131d4a968442208136784, type: 3}
+  ResourceGeneratorData:
+    generateRateTimer: 6
     resourceType: {fileID: 11400000, guid: 550f3be38eac2c74d8dc3d416c751495, type: 2}
-    resourceDetectionRadius: 6
+    resourceDetectionRadius: 5
     maxResourceSource: 2
-  hasResourceGenerator: 1
-  buildingSprite: {fileID: 21300000, guid: 12c91ef6e20375b4a9b879f4ec4201d8, type: 3}
-  minConstructionRadius: 5
-  constructionCostArray:
-  - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceAmount: 50
+  HasResourceGenerator: 1
+  BuildingSprite: {fileID: 21300000, guid: 12c91ef6e20375b4a9b879f4ec4201d8, type: 3}
+  MinConstructionRadius: 10
+  ConstructionCostArray:
   - resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
     resourceAmount: 50
-  buildingHealthMax: 100
+  - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
+    resourceAmount: 50
+  BuildingHealthMax: 50
+  ConstructionTimerMax: 5

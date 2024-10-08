@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
   m_Name: StoneCollector
   m_EditorClassIdentifier: 
-  buildingName: Stone Collector
-  prefab: {fileID: 8114719195682516889, guid: b4ddfa97845b9374abc5054bbde22618, type: 3}
-  resourceGeneratorData:
-    generateRateTimer: 2
+  BuildingName: Stone Collector
+  Prefab: {fileID: 8114719195682516889, guid: b4ddfa97845b9374abc5054bbde22618, type: 3}
+  ResourceGeneratorData:
+    generateRateTimer: 5
     resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
-    resourceDetectionRadius: 6
-    maxResourceSource: 4
-  hasResourceGenerator: 1
-  buildingSprite: {fileID: 21300000, guid: 645343bab0b7f534eaa63ed670214961, type: 3}
-  minConstructionRadius: 6
-  constructionCostArray:
+    resourceDetectionRadius: 12
+    maxResourceSource: 3
+  HasResourceGenerator: 1
+  BuildingSprite: {fileID: 21300000, guid: 645343bab0b7f534eaa63ed670214961, type: 3}
+  MinConstructionRadius: 10
+  ConstructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
     resourceAmount: 30
-  buildingHealthMax: 100
+  BuildingHealthMax: 50
+  ConstructionTimerMax: 4

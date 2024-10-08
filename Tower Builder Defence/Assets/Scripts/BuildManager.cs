@@ -40,10 +40,12 @@ public class BuildManager : MonoBehaviour
             {
                 if (CanSpawnBuilding(activeBuildingType, MouseCursorPos.GetMousePos(), out string tipMessage))
                 {
-                    if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionCostArray))
+                    if (ResourceManager.Instance.CanAfford(activeBuildingType.ConstructionCostArray))
                     {
-                        ResourceManager.Instance.DecreaseResource(activeBuildingType.constructionCostArray);
-                        Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), quaternion.identity);
+                        ResourceManager.Instance.DecreaseResource(activeBuildingType.ConstructionCostArray);
+                        
+                        //Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), quaternion.identity);
+                        BuildingConstruction.Create(MouseCursorPos.GetMousePos(),activeBuildingType);
                     }
                     else
                     {
@@ -82,7 +84,7 @@ public class BuildManager : MonoBehaviour
 
     private bool CanSpawnBuilding(BuildingTypeScriptableObject buildingType, Vector3 position,out string tipMessage)
     {
-        BoxCollider2D boxCollider2D = buildingType.prefab.GetComponent<BoxCollider2D>();
+        BoxCollider2D boxCollider2D = buildingType.Prefab.GetComponent<BoxCollider2D>();
         Collider2D[] collider2Ds=Physics2D.OverlapBoxAll(position+(Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
         bool isAreaClear = collider2Ds.Length == 0;
         if (!isAreaClear)
@@ -91,7 +93,7 @@ public class BuildManager : MonoBehaviour
             return false;
         }
         //check the radius for same type of buildings
-        collider2Ds = Physics2D.OverlapCircleAll(position, buildingType.minConstructionRadius);
+        collider2Ds = Physics2D.OverlapCircleAll(position, buildingType.MinConstructionRadius);
         foreach (Collider2D collider2D in collider2Ds)
         {
             BuildingTypeClass buildingTypeHolder = collider2D.GetComponent<BuildingTypeClass>();
