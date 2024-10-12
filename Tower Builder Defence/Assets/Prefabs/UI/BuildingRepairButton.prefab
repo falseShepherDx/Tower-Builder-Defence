@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 901250108852330103}
   - component: {fileID: 5750035240653495639}
   - component: {fileID: 2212108215257433716}
-  - component: {fileID: 4112356611006955356}
+  - component: {fileID: 1455791788198314310}
   m_Layer: 5
-  m_Name: BuildingDemolishButton
+  m_Name: BuildingRepairButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2212108215257433716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4112356611006955356
+--- !u!114 &1455791788198314310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,10 +112,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1421853309837607782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35f0bc281d819740a9be1ac2350390a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d4720294c079004eb165684b56d91fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 0}
+  healthSystem: {fileID: 0}
+  goldResource: {fileID: 11400000, guid: 550f3be38eac2c74d8dc3d416c751495, type: 2}
 --- !u!1 &2671295465356946658
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7075472, g: 0.14351194, b: 0.14351194, a: 1}
+  m_Color: {r: 0.07009337, g: 0.9056604, b: 0.06407974, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7aaee900b0d60e49931ea60d22d72cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50ad6507fdbd9ff46b451119d06d81b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

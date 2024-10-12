@@ -35,7 +35,6 @@ public class BuildingConstruction : MonoBehaviour
         constructionTimer -= Time.deltaTime;
         if (constructionTimer <= 0)
         {
-            Debug.Log("bomm");
             Instantiate(buildingType.Prefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
@@ -58,4 +57,6 @@ public class BuildingConstruction : MonoBehaviour
     {
         return (constructionTimer / constructionTimerMax);
     }
+    
+    
 }

@@ -23,5 +23,5 @@ MonoBehaviour:
   BuildingSprite: {fileID: 21300000, guid: 18f76be8248c85342b7ead05b679a515, type: 3}
   MinConstructionRadius: 0
   ConstructionCostArray: []
-  BuildingHealthMax: 200
+  BuildingHealthMax: 250
   ConstructionTimerMax: 0
