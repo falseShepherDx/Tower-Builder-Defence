@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c592e40d950771f458f4c520a4c31e1a, type: 3}
   m_Name: TownHall
   m_EditorClassIdentifier: 
-  buildingName: 
-  prefab: {fileID: 2170034969919225441, guid: 493d567513b6a8445bf81403739e632a, type: 3}
-  resourceGeneratorData:
-    generateRateTimer: 1
+  BuildingName: Town Hall
+  Prefab: {fileID: 2170034969919225441, guid: 493d567513b6a8445bf81403739e632a, type: 3}
+  ResourceGeneratorData:
+    generateRateTimer: 2
     resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceDetectionRadius: 7
-    maxResourceSource: 7
-  buildingSprite: {fileID: 0}
-  minConstructionRadius: 0
+    resourceDetectionRadius: 15
+    maxResourceSource: 5
+  HasResourceGenerator: 1
+  BuildingSprite: {fileID: 21300000, guid: 18f76be8248c85342b7ead05b679a515, type: 3}
+  MinConstructionRadius: 0
+  ConstructionCostArray: []
+  BuildingHealthMax: 250
+  ConstructionTimerMax: 0

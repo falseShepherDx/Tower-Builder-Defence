@@ -13,5 +13,14 @@ public static class MouseCursorPos
         mousePos.z = 0f;
         return mousePos;
     }
-   
+
+    public static Vector3 RandomizeSpawnDirection()
+    {
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    }
+    public static float GetAngleFromVector(Vector3 vector) {
+        float radians = Mathf.Atan2(vector.y, vector.x);
+        float degrees = radians * Mathf.Rad2Deg;
+        return degrees;
+    }
 }

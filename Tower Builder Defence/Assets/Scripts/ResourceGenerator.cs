@@ -6,11 +6,13 @@ public class ResourceGenerator : MonoBehaviour
     private float timer;
     private float generateRate;
     private ResourceGeneratorData _resourceGeneratorData;
+    private Animator _animator;
 
     private void Awake()
     {
-        _resourceGeneratorData=GetComponent<BuildingTypeClass>().buildingType.resourceGeneratorData;
+        _resourceGeneratorData=GetComponent<BuildingTypeClass>().buildingType.ResourceGeneratorData;
         generateRate = _resourceGeneratorData.generateRateTimer;
+        _animator = GetComponent<Animator>();
     }
 
     public static int GetNearbyResourceAmount(ResourceGeneratorData resourceGeneratorData, Vector3 position)
@@ -38,6 +40,8 @@ public class ResourceGenerator : MonoBehaviour
         if (nearbyResourceAmount == 0)
         {
             this.enabled = false;
+            if (_animator != null)
+                _animator.enabled = false;
         }
         else
         {
@@ -53,8 +57,7 @@ public class ResourceGenerator : MonoBehaviour
             }
             generateRate = _resourceGeneratorData.generateRateTimer / speedupFactor;
         }
-
-        Debug.Log("Nearby Resource Amount : " + nearbyResourceAmount + "timerMax:" + generateRate);
+        
 
     }
 
