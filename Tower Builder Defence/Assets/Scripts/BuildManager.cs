@@ -30,6 +30,17 @@ public class BuildManager : MonoBehaviour
         //activeBuildingType = buildingTypeList.list[0];
     }
 
+    private void Start()
+    {
+        hqBuilding.GetComponent<HealthSystem>().OnDied += hqBuilding_OnDied;
+        
+    }
+
+    private void hqBuilding_OnDied(object sender, EventArgs e)
+    {
+       GameOverUI.Instance.Show();
+    }
+
     private void Update()
     {
         Cursor.visible = false;

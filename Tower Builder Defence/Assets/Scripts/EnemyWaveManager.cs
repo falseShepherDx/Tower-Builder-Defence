@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class EnemyWaveManager : MonoBehaviour
 {
     public event EventHandler OnWaveNumberChanged;
+    public static EnemyWaveManager Instance { get; private set; }
     private enum State
     {
         WaitingToSpawnNextWave,
@@ -24,6 +25,7 @@ public class EnemyWaveManager : MonoBehaviour
     
     private void Start()
     {
+        Instance = this;
         state = State.WaitingToSpawnNextWave;
         nextWaveSpawnTimer = 3f;
         spawnPos = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
