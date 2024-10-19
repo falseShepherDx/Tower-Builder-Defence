@@ -27,6 +27,7 @@ public class GameOverUI : MonoBehaviour
         {
             GameSceneManager.LoadScene(GameSceneManager.GameScenes.MainMenu);
         });
+        
        
     }
 

@@ -31,12 +31,22 @@ public class Enemy : MonoBehaviour
         targetChaseTimer = Random.Range(0f, targetChaseTimerMax);
         _healthSystem=GetComponent<HealthSystem>();
         _healthSystem.OnDied += HealthSystem_OnDied;
+        _healthSystem.OnDamaged += HealthSystem_OnDamaged;
+    }
+
+    private void HealthSystem_OnDamaged(object sender, EventArgs e)
+    {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
     }
 
     private void HealthSystem_OnDied(object sender, EventArgs e)
     {
-        //add some visuals here.
+        
+        Instantiate((Resources.Load<Transform>("enemyDeathParticle")), transform.position,
+            Quaternion.identity);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         Destroy(gameObject);
+        
     }
 
 
@@ -53,6 +63,7 @@ public class Enemy : MonoBehaviour
         {
             HealthSystem healthSystem = building.GetComponent<HealthSystem>();
             healthSystem.TakeDamage(enemyDamage);
+            this._healthSystem.TakeDamage(999);
             Destroy(gameObject);
         }
     }
@@ -72,9 +83,17 @@ public class Enemy : MonoBehaviour
         if (target != null)
         {
             Vector3 moveDirection = (target.position - transform.position).normalized;
-            //rb.velocity = moveDirection *enemyMoveSpeed;
             Vector3 targetVelocity = moveDirection * enemyMoveSpeed;
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity, 0.3f);
+        }
+        if (rb.velocity.x > 0)
+        {
+            
+            transform.localScale = new Vector3(-2, transform.localScale.y, transform.localScale.z);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(2, transform.localScale.y, transform.localScale.z);
         }
         else
         {

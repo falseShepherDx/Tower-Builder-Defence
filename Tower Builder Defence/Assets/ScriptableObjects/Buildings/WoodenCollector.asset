@@ -15,15 +15,15 @@ MonoBehaviour:
   BuildingName: Wooden Collector
   Prefab: {fileID: 207442154302194089, guid: 8aec7f2557dffc0469c6126a3f1db257, type: 3}
   ResourceGeneratorData:
-    generateRateTimer: 2
+    generateRateTimer: 0.5
     resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
     resourceDetectionRadius: 7
-    maxResourceSource: 5
+    maxResourceSource: 7
   HasResourceGenerator: 1
   BuildingSprite: {fileID: 21300000, guid: 4122b9607a7add74087f8c90533ac919, type: 3}
   MinConstructionRadius: 6
   ConstructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceAmount: 12
-  BuildingHealthMax: 75
-  ConstructionTimerMax: 2.5
+    resourceAmount: 25
+  BuildingHealthMax: 80
+  ConstructionTimerMax: 6

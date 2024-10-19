@@ -36,12 +36,14 @@ public class BuildingConstruction : MonoBehaviour
         if (constructionTimer <= 0)
         {
             Instantiate(buildingType.Prefab, transform.position, Quaternion.identity);
+            
             Destroy(this.gameObject);
         }
     }
 
     private void PrepareBuildingTypeToConstruction(BuildingTypeScriptableObject buildingType)
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingConstruction);
         this.buildingType = buildingType;
         spriteRenderer.sprite = buildingType.BuildingSprite;
         

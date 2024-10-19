@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.486
+    m_Value: 0.472
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -60,7 +60,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.201
+    m_Value: 0.19
 --- !u!114 &4659251322610893289
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -82,7 +82,7 @@ MonoBehaviour:
     m_Value: 0.261
   response:
     m_OverrideState: 1
-    m_Value: 0.521
+    m_Value: 0.414
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1.45
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
