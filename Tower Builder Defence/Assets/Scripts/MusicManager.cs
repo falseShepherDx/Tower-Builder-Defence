@@ -6,7 +6,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     private AudioSource audioSource;
-    private float volume = 0.2f;
+    private float volume = 0.1f;
     public static MusicManager Instance;
     
     private void Awake()

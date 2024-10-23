@@ -12,6 +12,9 @@ public class BuildingDemolishButton : MonoBehaviour
     {
         transform.Find("Button").GetComponent<Button>().onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestruction);
+            Instantiate(Resources.Load<Transform>("buildingDestroyedParticle"), building.transform.position,
+                Quaternion.identity);
             BuildingTypeScriptableObject buildingTypeScriptableObject=building.GetComponent<BuildingTypeClass>().buildingType;
             foreach (ResourceAmount resourceAmount in buildingTypeScriptableObject.ConstructionCostArray)
             {

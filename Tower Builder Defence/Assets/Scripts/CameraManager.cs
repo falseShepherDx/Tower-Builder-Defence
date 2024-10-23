@@ -33,7 +33,7 @@ public class CameraManager : MonoBehaviour
         targetOrtographicSize += Input.mouseScrollDelta.y*zoomSpeed;
         targetOrtographicSize = Mathf.Clamp(targetOrtographicSize, minScrollLimit, maxScrollLimit);
         float smoothSpeed = 5f;
-        ortographicSize = Mathf.Lerp(ortographicSize, targetOrtographicSize, Time.deltaTime * 5f);
+        ortographicSize = Mathf.Lerp(ortographicSize, targetOrtographicSize, Time.deltaTime * smoothSpeed);
         virtualCamera.m_Lens.OrthographicSize = ortographicSize;
     }
 
