@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.486
+    m_Value: 0.472
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -44,8 +44,8 @@ MonoBehaviour:
   - {fileID: -1621369870105416918}
   - {fileID: 8691147932699098540}
   - {fileID: 4659251322610893289}
-  - {fileID: 2237841339885939963}
---- !u!114 &2237841339885939963
+  - {fileID: 3882860886163708387}
+--- !u!114 &3882860886163708387
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.201
+    m_Value: 0.1
 --- !u!114 &4659251322610893289
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -82,7 +82,7 @@ MonoBehaviour:
     m_Value: 0.261
   response:
     m_OverrideState: 1
-    m_Value: 0.521
+    m_Value: 0.414
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1.45
   scatter:
     m_OverrideState: 0
     m_Value: 0.7

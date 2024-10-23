@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a797eee84882345bd34107281e9991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRadius: 20
+  shootRadius: 22
   shootingPos: {fileID: 6928199593514819467}
   shootTimerMax: 0.25
 --- !u!95 &7288321063080412384

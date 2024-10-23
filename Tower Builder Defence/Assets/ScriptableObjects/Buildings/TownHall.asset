@@ -15,7 +15,7 @@ MonoBehaviour:
   BuildingName: Town Hall
   Prefab: {fileID: 2170034969919225441, guid: 493d567513b6a8445bf81403739e632a, type: 3}
   ResourceGeneratorData:
-    generateRateTimer: 2
+    generateRateTimer: 1
     resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
     resourceDetectionRadius: 15
     maxResourceSource: 5

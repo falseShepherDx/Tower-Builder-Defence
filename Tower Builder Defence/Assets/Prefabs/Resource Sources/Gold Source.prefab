@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 669483728033956560}
   - component: {fileID: 6065175961433501038}
   - component: {fileID: 5558672305245901739}
+  - component: {fileID: 1949893458075467106}
   m_Layer: 0
   m_Name: Gold Source
   m_TagString: Untagged
@@ -133,9 +134,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.56043327, y: -0.9283325}
+  m_Offset: {x: 0.50851077, y: -0.79852533}
   serializedVersion: 2
-  m_Radius: 2.1167088
+  m_Radius: 1.7532505
 --- !u!114 &6065175961433501038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +165,15 @@ MonoBehaviour:
   resourceSourceSprites:
   - {fileID: 21300000, guid: b311a57a13ad9f44da827295877f1e4d, type: 3}
   - {fileID: 21300000, guid: b00aa951fd41f734c96da1ca5811e6e2, type: 3}
+--- !u!210 &1949893458075467106
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329924862990776615}
+  m_Enabled: 0
+  m_SortingLayerID: 1773387827
+  m_SortingLayer: 2
+  m_SortingOrder: 2
+  m_SortAtRoot: 0

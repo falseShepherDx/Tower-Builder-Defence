@@ -38,6 +38,7 @@ public class BuildManager : MonoBehaviour
 
     private void hqBuilding_OnDied(object sender, EventArgs e)
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
        GameOverUI.Instance.Show();
     }
 
@@ -57,6 +58,7 @@ public class BuildManager : MonoBehaviour
                         
                         //Instantiate(activeBuildingType.prefab, MouseCursorPos.GetMousePos(), quaternion.identity);
                         BuildingConstruction.Create(MouseCursorPos.GetMousePos(),activeBuildingType);
+                        
                     }
                     else
                     {
@@ -69,12 +71,8 @@ public class BuildManager : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Vector3 enemyPosition = MouseCursorPos.GetMousePos() + MouseCursorPos.RandomizeSpawnDirection() * 5f;
-            Enemy.Create(enemyPosition);
-        }
+        
+       
     }
 
   
@@ -119,8 +117,20 @@ public class BuildManager : MonoBehaviour
                 }
             }
         }
+        if (buildingType.HasResourceGenerator)
+        {
+            ResourceGeneratorData resourceGeneratorData = buildingType.ResourceGeneratorData;
+            int nearbyResourceAmount =
+                ResourceGenerator.GetNearbyResourceAmount(resourceGeneratorData,position);
+            if (nearbyResourceAmount == 0)
+            {
+                tipMessage = "There are no resources here!";
+                return false;
+            }
+        }    
+        
         //if there is a building in max radius then return true
-        float maxConstructRadius = 25f;
+        float maxConstructRadius = 30f;
         collider2Ds = Physics2D.OverlapCircleAll(position, maxConstructRadius);
         foreach (Collider2D collider2D in collider2Ds)
         {

@@ -31,6 +31,7 @@ public class EnemyWaveUI : MonoBehaviour
 
     private void EnemyWaveManager_OnWaveNumberChanged(object sender, EventArgs e)
     {
+        
         SetNumberText("Wave " + enemyWaveManager.GetWaveNumber());
     }
 

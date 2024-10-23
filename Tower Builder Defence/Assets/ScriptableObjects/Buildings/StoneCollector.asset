@@ -15,15 +15,15 @@ MonoBehaviour:
   BuildingName: Stone Collector
   Prefab: {fileID: 8114719195682516889, guid: b4ddfa97845b9374abc5054bbde22618, type: 3}
   ResourceGeneratorData:
-    generateRateTimer: 5
+    generateRateTimer: 1.1
     resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
     resourceDetectionRadius: 12
-    maxResourceSource: 3
+    maxResourceSource: 4
   HasResourceGenerator: 1
   BuildingSprite: {fileID: 21300000, guid: 645343bab0b7f534eaa63ed670214961, type: 3}
-  MinConstructionRadius: 10
+  MinConstructionRadius: 7
   ConstructionCostArray:
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceAmount: 30
-  BuildingHealthMax: 100
-  ConstructionTimerMax: 4
+    resourceAmount: 100
+  BuildingHealthMax: 125
+  ConstructionTimerMax: 6

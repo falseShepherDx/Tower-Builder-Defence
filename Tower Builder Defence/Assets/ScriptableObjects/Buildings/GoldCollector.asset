@@ -15,17 +15,17 @@ MonoBehaviour:
   BuildingName: Gold Collector
   Prefab: {fileID: 4301133565608913135, guid: 8e7df935e83131d4a968442208136784, type: 3}
   ResourceGeneratorData:
-    generateRateTimer: 6
+    generateRateTimer: 1.75
     resourceType: {fileID: 11400000, guid: 550f3be38eac2c74d8dc3d416c751495, type: 2}
-    resourceDetectionRadius: 5
-    maxResourceSource: 2
+    resourceDetectionRadius: 8
+    maxResourceSource: 3
   HasResourceGenerator: 1
   BuildingSprite: {fileID: 21300000, guid: 12c91ef6e20375b4a9b879f4ec4201d8, type: 3}
-  MinConstructionRadius: 10
+  MinConstructionRadius: 7
   ConstructionCostArray:
   - resourceType: {fileID: 11400000, guid: ddedd9a0ac29a1944970287fb1353697, type: 2}
-    resourceAmount: 50
+    resourceAmount: 100
   - resourceType: {fileID: 11400000, guid: 7a388b418b687fc49b73359cf77dda4b, type: 2}
-    resourceAmount: 50
-  BuildingHealthMax: 125
-  ConstructionTimerMax: 5
+    resourceAmount: 150
+  BuildingHealthMax: 170
+  ConstructionTimerMax: 15
