@@ -128,7 +128,7 @@ public class Enemy : MonoBehaviour
                 else
                 {
                     if (Vector3.Distance(transform.position, building.transform.position) <
-                        Vector3.Distance(transform.position, target.position)) ;
+                        Vector3.Distance(transform.position, target.position)) 
                     {
                         target = building.transform;
                     }

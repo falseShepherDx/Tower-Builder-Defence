@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.486834
+  m_AmplitudeGain: 0
   m_FrequencyGain: 5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &85014199 stripped
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1863164233}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 24.99999
+    OrthographicSize: 29.99999
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -8915,7 +8915,7 @@ Camera:
   far clip plane: 5000
   field of view: 60
   orthographic: 1
-  orthographic size: 24.99999
+  orthographic size: 29.99999
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23413,7 +23413,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
-  secondsPerDay: 25
+  secondsPerDay: 30
 --- !u!4 &1404426224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6993638260652321377, guid: 1034a33f524b94a4593ea101fb94ee23, type: 3}
@@ -36495,7 +36495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: zoomSpeed
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: virtualCamera
@@ -36503,15 +36503,15 @@ PrefabInstance:
       objectReference: {fileID: 399506308}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: maxScrollLimit
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: minScrollLimit
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8892449025478342330, guid: 9cd4d25922e80b64faa6b22a30243a5e, type: 3}
       propertyPath: cameraMoveSpeed
-      value: 65
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
