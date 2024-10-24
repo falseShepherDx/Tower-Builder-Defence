@@ -1,14 +1,10 @@
 using System;
-using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class BuildManager : MonoBehaviour
 {
-    [SerializeField] private Camera camera;
+    [SerializeField] private new Camera camera;
     [SerializeField] private GameObject cursor;
     private BuildingTypeScriptableObject activeBuildingType;
     private BuildingTypeList buildingTypeList;
@@ -37,8 +33,9 @@ public class BuildManager : MonoBehaviour
     }
 
     private void hqBuilding_OnDied(object sender, EventArgs e)
-    {
-        SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
+    { 
+        SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver); 
+        MusicManager.Instance.gameObject.SetActive(false);
        GameOverUI.Instance.Show();
     }
 

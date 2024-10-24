@@ -60,7 +60,7 @@ public class Tower : MonoBehaviour
                 else
                 {
                     if (Vector3.Distance(transform.position, enemy.transform.position) <
-                        Vector3.Distance(transform.position, targetEnemy.transform.position)) ;
+                        Vector3.Distance(transform.position, targetEnemy.transform.position)) 
                     {
                         targetEnemy = enemy;
                     }
